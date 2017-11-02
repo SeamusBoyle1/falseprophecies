@@ -13,7 +13,10 @@ warnings.filterwarnings("ignore") #Hide messy Numpy warnings
 def load_data(filename, seq_len, normalise_window):
     f = open(filename, 'rb').read()
     data = f.decode().split('\n')
+    return load_data2(data, seq_len, normalise_window)
 
+
+def load_data2(data, seq_len, normalise_window):
     sequence_length = seq_len + 1
     result = []
     for index in range(len(data) - sequence_length):
